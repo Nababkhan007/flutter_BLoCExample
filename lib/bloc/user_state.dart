@@ -10,7 +10,7 @@ class UserLoadingState extends UserState {}
 class UserLoadedState extends UserState {
   final User user;
 
-  UserLoadedState({@required this.user});
+  UserLoadedState({required this.user});
 }
 
 class UserErrorState extends UserState {

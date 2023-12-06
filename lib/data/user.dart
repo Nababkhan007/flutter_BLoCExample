@@ -14,12 +14,12 @@ class User {
     this.support,
   });
 
-  int page;
-  int perPage;
-  int total;
-  int totalPages;
-  List<Data> data;
-  Support support;
+  int? page;
+  int? perPage;
+  int? total;
+  int? totalPages;
+  List<Data>? data;
+  Support? support;
 
   factory User.fromJson(Map<String, dynamic> json) =>
       User(
@@ -37,8 +37,8 @@ class User {
         "per_page": perPage,
         "total": total,
         "total_pages": totalPages,
-        "data": List<dynamic>.from(data.map((x) => x.toJson())),
-        "support": support.toJson(),
+        "data": List<dynamic>.from(data!.map((x) => x.toJson())),
+        "support": support!.toJson(),
       };
 }
 
@@ -51,11 +51,11 @@ class Data {
     this.avatar,
   });
 
-  int id;
-  String email;
-  String firstName;
-  String lastName;
-  String avatar;
+  int? id;
+  String? email;
+  String? firstName;
+  String? lastName;
+  String? avatar;
 
   factory Data.fromJson(Map<String, dynamic> json) =>
       Data(
@@ -82,8 +82,8 @@ class Support {
     this.text,
   });
 
-  String url;
-  String text;
+  String? url;
+  String? text;
 
   factory Support.fromJson(Map<String, dynamic> json) =>
       Support(

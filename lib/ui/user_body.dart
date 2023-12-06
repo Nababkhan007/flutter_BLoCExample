@@ -5,7 +5,7 @@ import 'package:flutter_bloc_example/helper/text.dart';
 class UserBody extends StatelessWidget {
   final List<Data> userData;
 
-  UserBody({this.userData});
+  UserBody({required this.userData});
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +34,8 @@ class UserBody extends StatelessWidget {
                   width: size.width * 0.02,
                 ),
                 data.avatar != null
-                    ? data.avatar.isNotEmpty
-                        ? Image.network(data.avatar)
+                    ? data.avatar!.isNotEmpty
+                        ? Image.network(data.avatar!)
                         : Image.asset("assets/images/user.png")
                     : Image.asset("assets/images/user.png"),
                 SizedBox(
@@ -47,9 +47,9 @@ class UserBody extends StatelessWidget {
                     children: [
                       Text(
                         data.firstName != null && data.lastName != null
-                            ? data.firstName.isNotEmpty &&
-                                    data.lastName.isNotEmpty
-                                ? data.firstName + " " + data.lastName
+                            ? data.firstName!.isNotEmpty &&
+                                    data.lastName!.isNotEmpty
+                                ? data.firstName! + " " + data.lastName!
                                 : user
                             : user,
                         style: TextStyle(
@@ -63,8 +63,8 @@ class UserBody extends StatelessWidget {
                       ),
                       Text(
                         data.email != null
-                            ? data.email.isNotEmpty
-                                ? data.email
+                            ? data.email!.isNotEmpty
+                                ? data.email!
                                 : email
                             : email,
                         style: TextStyle(

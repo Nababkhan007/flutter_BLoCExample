@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_example/helper/text.dart';
+import 'package:flutter_bloc_example/ui/user_body.dart';
 import 'package:flutter_bloc_example/bloc/user_bloc.dart';
 import 'package:flutter_bloc_example/bloc/user_event.dart';
 import 'package:flutter_bloc_example/bloc/user_state.dart';
-import 'package:flutter_bloc_example/helper/text.dart';
-import 'package:flutter_bloc_example/ui/user_body.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         builder: (BuildContext context, UserState userState) {
           if (userState is UserLoadedState) {
             return UserBody(
-              userData: userState.user.data,
+              userData: userState.user.data!,
             );
           } else if (userState is UserErrorState) {
             return Center(
